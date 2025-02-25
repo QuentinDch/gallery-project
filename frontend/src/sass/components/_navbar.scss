@@ -1,0 +1,32 @@
+// navbar.scss
+@use "@mixins" as *;
+
+.navbar {
+  @include flex-between;
+  width: 100%;
+  padding-inline: 9.375rem;
+  padding-block: 12.1875rem;
+
+  font-size: 15rem;
+  line-height: normal;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 262.5rem;
+  @media screen and (max-width: 767px) {
+    gap: 51.25rem;
+  }
+}
+
+.navbar-right button {
+  text-transform: uppercase;
+  letter-spacing: inherit;
+}
+
+.navbar-right button:first-child {
+  margin-right: 18.75rem;
+  @media screen and (max-width: 767px) {
+    margin-right: 10.25rem;
+  }
+}

@@ -8,3 +8,7 @@
 @use "./globals/global";
 @use "./globals/reset";
 @use "./globals/typography";
+
+@use "./layouts/header";
+
+@use "./components/navbar";

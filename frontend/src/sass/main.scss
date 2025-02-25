@@ -4,5 +4,7 @@
 @use "./utils/mixins";
 @use "./utils/variables";
 
+@use "./globals/fonts";
 @use "./globals/global";
 @use "./globals/reset";
+@use "./globals/typography";

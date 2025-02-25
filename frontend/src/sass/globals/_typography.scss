@@ -1,1 +1,24 @@
 // _typography.scss
+
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  text-wrap: balance;
+  font-kerning: normal;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+}

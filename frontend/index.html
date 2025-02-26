@@ -1,13 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>gallery-project</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="app">
+      <header class="header">
+        <nav class="navbar" aria-label="Main navigation">
+          <h1 class="navbar__brand">
+            <a href="/" aria-label="Home">spectral</a>
+          </h1>
+          <button
+            class="navbar__toggle navbar__toggle--open"
+            role="button"
+            aria-label="Open menu"
+          >
+            <div class="navbar__toggle-text">
+              <span class="navbar__toggle-label">menu</span>
+            </div>
+          </button>
+          <button
+            class="navbar__toggle navbar__toggle--close"
+            role="button"
+            aria-label="Close menu"
+          >
+            <div class="navbar__toggle-text">
+              <span class="navbar__toggle-label">close</span>
+            </div>
+          </button>
+          <a href="/" class="navbar__login" aria-label="Login">
+            <span>login</span>
+          </a>
+        </nav>
+      </header>
+      <div
+        class="menu"
+        role="menu"
+        aria-label="Main menu"
+        aria-hidden="true"
+      ></div>
+      <main></main>
+    </div>
+    <script type="module" src="/src/js/main.js" defer></script>
   </body>
 </html>

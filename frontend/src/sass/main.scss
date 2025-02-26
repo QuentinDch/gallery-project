@@ -1,0 +1,15 @@
+// main.scss
+
+@use "./utils/helpers";
+@use "./utils/mixins";
+@use "./utils/variables";
+
+@use "./globals/fonts";
+@use "./globals/global";
+@use "./globals/reset";
+@use "./globals/typography";
+
+@use "./layouts/header";
+@use "./layouts/menu";
+
+@use "./components/navbar";

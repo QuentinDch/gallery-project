@@ -9,17 +9,30 @@
     <div class="app">
       <header class="header">
         <nav class="navbar" aria-label="Main navigation">
-          <div class="navbar-left">
-            <a href="/" class="brand" aria-label="Home"><h1>gallery</h1></a>
-          </div>
-          <div class="navbar-right">
-            <button role="button" aria-label="Open menu">
-              <span>menu</span>
-            </button>
-            <button role="button" aria-label="Sign in">
-              <span>sign in</span>
-            </button>
-          </div>
+          <h1 class="navbar__brand">
+            <a href="/" aria-label="Home">spectral</a>
+          </h1>
+          <button
+            class="navbar__toggle navbar__toggle--open"
+            role="button"
+            aria-label="Open menu"
+          >
+            <div class="navbar__toggle-text">
+              <span class="navbar__toggle-label">menu</span>
+            </div>
+          </button>
+          <button
+            class="navbar__toggle navbar__toggle--close"
+            role="button"
+            aria-label="Close menu"
+          >
+            <div class="navbar__toggle-text">
+              <span class="navbar__toggle-label">close</span>
+            </div>
+          </button>
+          <a href="/" class="navbar__login" aria-label="Login">
+            <span>login</span>
+          </a>
         </nav>
       </header>
     </div>

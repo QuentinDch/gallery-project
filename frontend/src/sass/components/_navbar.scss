@@ -2,31 +2,51 @@
 @use "@mixins" as *;
 
 .navbar {
+  position: relative;
   @include flex-between;
+  margin-top: 12.1875rem;
+  padding-inline: 12.1875rem;
   width: 100%;
-  padding-inline: 9.375rem;
-  padding-block: 12.1875rem;
 
-  font-size: 15rem;
-  line-height: normal;
-}
-
-.navbar-right {
-  display: flex;
-  gap: 262.5rem;
-  @media screen and (max-width: 767px) {
-    gap: 51.25rem;
-  }
-}
-
-.navbar-right button {
+  letter-spacing: -0.05em;
   text-transform: uppercase;
-  letter-spacing: inherit;
+  font-size: 13.125rem;
+  line-height: normal;
+
+  &__brand {
+    font-weight: bold;
+  }
 }
 
-.navbar-right button:first-child {
-  margin-right: 18.75rem;
-  @media screen and (max-width: 767px) {
-    margin-right: 10.25rem;
+.navbar__toggle {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  padding: 4.68rem;
+  text-transform: uppercase;
+  &--open {
+    pointer-events: all;
   }
+
+  &--close {
+    pointer-events: none;
+  }
+  @media (max-width: 1024px) {
+    left: 70%;
+  }
+  @media (max-width: 767px) {
+    left: 60%;
+  }
+}
+
+.navbar__toggle-text {
+  overflow: hidden;
+  height: 100%;
+}
+
+.navbar__toggle-label {
+  display: block;
+  transform: translate3d(0, 110%, 0);
+  will-change: transform;
 }

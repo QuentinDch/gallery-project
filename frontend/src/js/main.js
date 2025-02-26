@@ -1,9 +1,9 @@
 // main.js
 
-// global styles
+// Global styles
 import "../sass/main.scss";
 
-// import components
+// Import components
 import { initMenuToggler } from "./components/menuToggler";
 
 document.addEventListener("DOMContentLoaded", () => {

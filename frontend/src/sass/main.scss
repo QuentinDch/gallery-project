@@ -11,5 +11,6 @@
 
 @use "./layouts/header";
 @use "./layouts/menu";
+@use "./layouts/navbar";
 
-@use "./components/navbar";
+@use "./components/animated-bracket";

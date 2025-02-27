@@ -40,13 +40,13 @@ export function initMenuToggler() {
     });
     gsap.to(menuLabelClose, {
       transform: "translate3d(0%, 0%, 0px)",
-      duration: 1.5,
+      duration: 1.25,
       ease: defaultEase,
     });
 
     gsap.to(menu, {
       clipPath: "inset(0% 0% 0% 0%)",
-      duration: 1.5,
+      duration: 1.25,
       ease: defaultEase,
     });
   }
@@ -64,7 +64,7 @@ export function initMenuToggler() {
 
     gsap.to(menuLabelOpen, {
       transform: "translate3d(0%, 0%, 0px)",
-      duration: 1.5,
+      duration: 1.25,
       ease: defaultEase,
     });
     gsap.to(menuLabelClose, {
@@ -75,7 +75,7 @@ export function initMenuToggler() {
 
     gsap.to(menu, {
       clipPath: "inset(0% 0% 100% 0%)",
-      duration: 1.5,
+      duration: 1.25,
       ease: defaultEase,
     });
   }

@@ -5,6 +5,10 @@ export function initMenuToggler() {
   const menuOpen = document.querySelector(".navbar__toggle--open");
   const menuClose = document.querySelector(".navbar__toggle--close");
 
+  if (!menuOpen || !menuClose) {
+    return;
+  }
+
   const menuLabelOpen = menuOpen.querySelector(".navbar__toggle-label");
   const menuLabelClose = menuClose.querySelector(".navbar__toggle-label");
 
@@ -79,6 +83,8 @@ export function initMenuToggler() {
       ease: defaultEase,
     });
   }
+
+  // Écouteurs d'événements uniquement si les éléments sont présents
   menuOpen.addEventListener("click", () => openMenu());
   menuClose.addEventListener("click", () => closeMenu());
 }

@@ -3,10 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gallery-project</title>
+    <title>Login | Spectral Gallery</title>
   </head>
   <body>
-    <div class="app"></div>
+    <div class="app">
+      <header class="header">
+        <nav class="navbar navbar--login">
+          <h1 class="navbar__brand">
+            <a href="/" aria-label="Home">spectral</a>
+          </h1>
+        </nav>
+      </header>
+      <main class="main">
+        <div class="login">
+          <section class="login__message">
+            <p class="login__message-text">Lorem ipsum dolor sit amet.</p>
+            <div class="login__image-container">
+              <img src="" alt="" class="login__image" />
+            </div>
+          </section>
+          <section class="login__form">
+            <div class="login__header">
+              <h2 id="form-title" class="login__title">Login</h2>
+              <p class="login__description">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit,
+                deserunt!
+              </p>
+            </div>
+            <form
+              action="#"
+              method="post"
+              aria-labelledby="form-title"
+              class="login__form-container"
+            >
+              <label for="email" class="login__label">User Name</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="login__input"
+                required
+              />
+
+              <label for="password" class="login__label">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="login__input"
+                required
+              />
+
+              <button type="submit" class="login__button">Login</button>
+            </form>
+            <div class="login__links">
+              <a href="#" class="login__link">GitHub</a>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
     <script type="module" src="../src/js/main.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,10 @@
+// login-navbar.scss
+
+.navbar--login {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.navbar--login > h1 {
+  grid-column: 2;
+}

@@ -9,8 +9,14 @@
 @use "./globals/reset";
 @use "./globals/typography";
 
+@use "./layouts/main";
+
 @use "./components/animated-bracket";
+@use "./components/page-transition";
 
 @use "./pages/index/layouts/header";
 @use "./pages/index/layouts/menu";
 @use "./pages/index/layouts/navbar";
+
+@use "./pages/login/layouts/login-container";
+@use "./pages/login/layouts/login-navbar";

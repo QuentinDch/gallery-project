@@ -84,7 +84,6 @@ export function initMenuToggler() {
     });
   }
 
-  // Écouteurs d'événements uniquement si les éléments sont présents
   menuOpen.addEventListener("click", () => openMenu());
   menuClose.addEventListener("click", () => closeMenu());
 }

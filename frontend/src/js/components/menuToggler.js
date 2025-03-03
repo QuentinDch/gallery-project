@@ -2,13 +2,19 @@
 import gsap from "gsap";
 
 export function initMenuToggler() {
+  const login = document.querySelector(".navbar__login");
+
   const menuOpen = document.querySelector(".navbar__toggle--open");
   const menuClose = document.querySelector(".navbar__toggle--close");
+
+  if (!menuOpen || !menuClose) {
+    return;
+  }
 
   const menuLabelOpen = menuOpen.querySelector(".navbar__toggle-label");
   const menuLabelClose = menuClose.querySelector(".navbar__toggle-label");
 
-  const menu = document.querySelector(".menu");
+  const menu = document.querySelector(".site-menu");
 
   let isOpen = false;
   const defaultEase = "power4.inOut";
@@ -40,13 +46,13 @@ export function initMenuToggler() {
     });
     gsap.to(menuLabelClose, {
       transform: "translate3d(0%, 0%, 0px)",
-      duration: 1.5,
+      duration: 1.25,
       ease: defaultEase,
     });
 
     gsap.to(menu, {
       clipPath: "inset(0% 0% 0% 0%)",
-      duration: 1.5,
+      duration: 1.25,
       ease: defaultEase,
     });
   }
@@ -64,7 +70,7 @@ export function initMenuToggler() {
 
     gsap.to(menuLabelOpen, {
       transform: "translate3d(0%, 0%, 0px)",
-      duration: 1.5,
+      duration: 1.25,
       ease: defaultEase,
     });
     gsap.to(menuLabelClose, {
@@ -75,10 +81,16 @@ export function initMenuToggler() {
 
     gsap.to(menu, {
       clipPath: "inset(0% 0% 100% 0%)",
-      duration: 1.5,
+      duration: 1.25,
       ease: defaultEase,
     });
   }
+
+  login.addEventListener("click", (event) => {
+    event.preventDefault();
+    openMenu();
+    document.getElementById("email").focus();
+  });
   menuOpen.addEventListener("click", () => openMenu());
   menuClose.addEventListener("click", () => closeMenu());
 }

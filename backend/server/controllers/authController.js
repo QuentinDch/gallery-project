@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-exports.login = async (req, res) => {
+module.exports.login = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -24,8 +24,20 @@ exports.login = async (req, res) => {
       expiresIn: "24h",
     });
 
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // Active Secure uniquement en prod (HTTPS obligatoire)
+      sameSite: "Strict",
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+
     res.json({ token });
   } catch (error) {
     res.status(500).json({ message: "Server error" });
   }
+};
+
+module.exports.logout = (req, res) => {
+  res.clearCookie("token");
+  res.json({ message: "Logged out successfully" });
 };

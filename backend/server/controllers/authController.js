@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
 module.exports.login = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, rememberMe } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({ message: "missing data" });
@@ -21,14 +21,14 @@ module.exports.login = async (req, res) => {
     }
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "24h",
+      expiresIn: rememberMe ? "7d" : "24h",
     });
 
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production", // Active Secure uniquement en prod (HTTPS obligatoire)
       sameSite: "Strict",
-      maxAge: 24 * 60 * 60 * 1000,
+      maxAge: rememberMe ? 7 * 24 * 60 * 60 * 1000 : null,
     });
 
     res.json({ token });

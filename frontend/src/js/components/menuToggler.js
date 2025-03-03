@@ -2,6 +2,8 @@
 import gsap from "gsap";
 
 export function initMenuToggler() {
+  const login = document.querySelector(".navbar__login");
+
   const menuOpen = document.querySelector(".navbar__toggle--open");
   const menuClose = document.querySelector(".navbar__toggle--close");
 
@@ -12,7 +14,7 @@ export function initMenuToggler() {
   const menuLabelOpen = menuOpen.querySelector(".navbar__toggle-label");
   const menuLabelClose = menuClose.querySelector(".navbar__toggle-label");
 
-  const menu = document.querySelector(".menu");
+  const menu = document.querySelector(".site-menu");
 
   let isOpen = false;
   const defaultEase = "power4.inOut";
@@ -84,6 +86,11 @@ export function initMenuToggler() {
     });
   }
 
+  login.addEventListener("click", (event) => {
+    event.preventDefault();
+    openMenu();
+    document.getElementById("email").focus();
+  });
   menuOpen.addEventListener("click", () => openMenu());
   menuClose.addEventListener("click", () => closeMenu());
 }

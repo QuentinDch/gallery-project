@@ -87,6 +87,15 @@ img {
   user-select: none;
 }
 
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  text-transform: uppercase;
+  color: inherit;
+}
+
 address {
   font-style: normal;
 }

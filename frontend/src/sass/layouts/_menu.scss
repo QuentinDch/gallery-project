@@ -1,0 +1,37 @@
+// menu.scss
+
+.site-menu {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  color: var(--black);
+  z-index: 10;
+  overflow: hidden;
+  pointer-events: none;
+  clip-path: inset(100% 0% 0% 0%);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.5em;
+}
+
+.site-menu__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  padding: 3em;
+}
+
+.auth-section__header {
+  margin-bottom: 20rem;
+  font-size: 13.125rem;
+  line-height: normal;
+
+  & h2 {
+    font-size: 15rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 5.625rem;
+  }
+}

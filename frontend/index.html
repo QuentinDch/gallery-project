@@ -30,14 +30,25 @@
               <span class="navbar__toggle-label">close [↓]</span>
             </div>
           </button>
-          <a href="#login-form" class="navbar__login" aria-label="Login">
-            <span>login</span>
-          </a>
-          <!-- <button class="navbar__login" type="button" aria-label="Logout">
-            <div>
-              <span>logout</span>
+          <a
+            href="#login-form"
+            class="navbar__login btn-toggler-login"
+            aria-label="Login"
+          >
+            <div class="navbar__login-text">
+              <span class="navbar__login-label">login</span>
             </div>
-          </button> -->
+          </a>
+          <button
+            type="button"
+            id="logout-button"
+            class="navbar__login btn-toggler-logout"
+            aria-label="Logout"
+          >
+            <div class="navbar__login-text">
+              <span class="navbar__login-label">Logout</span>
+            </div>
+          </button>
         </nav>
       </header>
       <div

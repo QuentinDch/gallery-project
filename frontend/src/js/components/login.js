@@ -1,4 +1,4 @@
-// login.js
+// loginUser.js
 
 export function loginUser() {
   const loginForm = document.getElementById("login-form");

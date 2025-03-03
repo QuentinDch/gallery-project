@@ -40,12 +40,14 @@
   }
 }
 
-.navbar__toggle-text {
+.navbar__toggle-text,
+.navbar__login-text {
   overflow: hidden;
   height: 100%;
 }
 
-.navbar__toggle-label {
+.navbar__toggle-label,
+.navbar__login-label {
   display: block;
   transform: translate3d(0, 110%, 0);
   will-change: transform;

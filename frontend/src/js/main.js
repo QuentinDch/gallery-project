@@ -7,13 +7,13 @@ import "../sass/main.scss";
 import { initMenuToggler } from "./components/menuToggler";
 import { loginUser } from "./components/login";
 import { logoutUser } from "./components/logout";
-// import { buttonAuthToggler } from "./components/buttonAuthToggler";
+import { setAuthButtonState } from "./components/setAuthButtonState";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Project loaded successfully!");
 
   initMenuToggler();
-  // buttonAuthToggler();
+  setAuthButtonState();
   loginUser();
   logoutUser();
 });

@@ -1,5 +1,7 @@
 // logoutUser.js
 
+import { setAuthButtonState } from "./setAuthButtonState";
+
 export function logoutUser() {
   document
     .getElementById("logout-button")
@@ -12,7 +14,7 @@ export function logoutUser() {
 
         const data = await response.json();
         if (response.ok) {
-          window.location.href = "/login.html";
+          setAuthButtonState();
         }
       } catch (error) {
         console.error("Error:", error);

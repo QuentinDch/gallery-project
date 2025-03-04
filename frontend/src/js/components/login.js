@@ -1,5 +1,7 @@
 // loginUser.js
 
+import { setAuthButtonState } from "./setAuthButtonState";
+
 export function loginUser() {
   const loginForm = document.getElementById("login-form");
 
@@ -23,7 +25,7 @@ export function loginUser() {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Connexion réussie !");
+        setAuthButtonState();
       }
     } catch (error) {
       console.error("Erreur:", error);

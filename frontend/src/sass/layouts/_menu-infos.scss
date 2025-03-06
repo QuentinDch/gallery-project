@@ -1,0 +1,21 @@
+// menu-infos.scss
+
+.infos-section__contact {
+  display: flex;
+  gap: 75rem;
+  line-height: 16rem;
+}
+
+.infos-section__contact a {
+  opacity: 1;
+  text-decoration: underline;
+  transition-property: opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.26, 1.04, 0.54, 1);
+}
+
+@media (hover: hover) {
+  .infos-section__contact a:hover {
+    opacity: 0.5;
+  }
+}

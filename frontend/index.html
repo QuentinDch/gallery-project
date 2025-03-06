@@ -57,9 +57,9 @@
         aria-label="Main menu"
         aria-hidden="true"
       >
-        <div class="site-menu__content">
+        <section class="site-menu__section site-menu__content">
           <div class="auth-section">
-            <div class="auth-section__header">
+            <div class="section-header auth-section__header">
               <h2>Login</h2>
               <p>Welcome back! Please login to your account.</p>
             </div>
@@ -107,8 +107,48 @@
               </button>
             </form>
           </div>
-        </div>
-        <div class="site-menu__image"></div>
+        </section>
+        <section class="site-menu__section site-menu__infos">
+          <div class="infos-section">
+            <div class="section-header infos-section__header">
+              <h2>Infos</h2>
+              <p>
+                Still life photographer based in Edinburgh with a personal
+                approach to objects, light and material.
+              </p>
+            </div>
+          </div>
+          <div class="infos-section__contact">
+            <div>
+              <h3>Contact</h3>
+              <address>
+                123 Royal Mile
+                <br />
+                EH1 2QR Edinburgh
+                <br />
+                Scotland
+              </address>
+            </div>
+            <div>
+              <h3>Represented by</h3>
+              <address>
+                <p>Spectral</p>
+                <a
+                  href="tel:+441315556789"
+                  aria-label="Call us at +44 131 555 6789"
+                >
+                  <span className="sr-only">Call us at </span>+44 131 555 6789
+                </a>
+                <br />
+                <a href="mailto:hello@Spectraldiscovery.co.uk">
+                  hello@spectraldiscovery.co.uk
+                </a>
+              </address>
+            </div>
+          </div>
+        </section>
+        <section class="site-menu__section"></section>
+        <section class="site-menu__section"></section>
       </div>
       <main></main>
     </div>

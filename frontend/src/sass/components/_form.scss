@@ -7,9 +7,13 @@
   gap: 10rem;
 }
 
+.auth-form__field {
+  width: 50%;
+}
+
 .auth-form__field input {
   display: block;
-  width: 50%;
+  width: 100%;
   height: 40rem;
   font-size: 11rem;
   border-bottom-width: 1px;
@@ -92,4 +96,17 @@
 .auth-form__remember-label input:checked + i {
   color: var(--white);
   background-color: var(--black);
+}
+
+.auth-form__field--required {
+  position: relative;
+  text-align: right;
+  font-size: 11rem;
+  color: #ff0000;
+
+  & span {
+    position: absolute;
+    width: 100%;
+    display: block;
+  }
 }

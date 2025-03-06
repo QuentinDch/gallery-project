@@ -40,7 +40,11 @@ export function loginUser() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password, rememberMe }),
+        body: JSON.stringify({
+          email: inputs.email.value,
+          password: inputs.password.value,
+          rememberMe,
+        }),
         credentials: "include",
       });
 

@@ -13,7 +13,17 @@ export function logoutUser() {
         });
 
         const data = await response.json();
+
         if (response.ok) {
+          const form = document.getElementById("login-form");
+          form.querySelectorAll("input").forEach((input) => {
+            if (input.type === "checkbox") {
+              input.checked = false;
+              return;
+            }
+            input.value = "";
+          });
+
           setAuthButtonState();
         }
       } catch (error) {

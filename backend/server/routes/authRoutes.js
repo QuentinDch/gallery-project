@@ -5,6 +5,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 // Route de connexion
 router.post("/login", authController.login);
+router.post("/logout", authController.logout);
 
 // Route protégée
 router.get("/profile", authMiddleware, (req, res) => {

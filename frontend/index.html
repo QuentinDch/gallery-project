@@ -30,14 +30,25 @@
               <span class="navbar__toggle-label">close [↓]</span>
             </div>
           </button>
-          <a href="#login-form" class="navbar__login" aria-label="Login">
-            <span>login</span>
-          </a>
-          <!-- <button class="navbar__login" type="button" aria-label="Logout">
-            <div>
-              <span>logout</span>
+          <a
+            href="#login-form"
+            class="navbar__login btn-toggler-login"
+            aria-label="Login"
+          >
+            <div class="navbar__login-text">
+              <span class="navbar__login-label">login</span>
             </div>
-          </button> -->
+          </a>
+          <button
+            type="button"
+            id="logout-button"
+            class="navbar__login btn-toggler-logout"
+            aria-label="Logout"
+          >
+            <div class="navbar__login-text">
+              <span class="navbar__login-label">Logout</span>
+            </div>
+          </button>
         </nav>
       </header>
       <div
@@ -46,9 +57,9 @@
         aria-label="Main menu"
         aria-hidden="true"
       >
-        <div class="site-menu__content">
+        <section class="site-menu__section site-menu__content">
           <div class="auth-section">
-            <div class="auth-section__header">
+            <div class="section-header auth-section__header">
               <h2>Login</h2>
               <p>Welcome back! Please login to your account.</p>
             </div>
@@ -59,7 +70,6 @@
                   name="email"
                   id="email"
                   placeholder="User name*"
-                  required
                 />
               </div>
               <div class="auth-form__field">
@@ -68,12 +78,11 @@
                   name="password"
                   id="password"
                   placeholder="Password*"
-                  required
                 />
               </div>
               <div class="auth-form__remember">
                 <label class="auth-form__remember-label" for="remember-me">
-                  <input type="checkbox" id="remember-me" required />
+                  <input type="checkbox" id="remember-me" />
                   <i>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -98,10 +107,70 @@
               </button>
             </form>
           </div>
-        </div>
-        <div class="site-menu__image"></div>
+        </section>
+        <section class="site-menu__section site-menu__infos">
+          <div class="infos-section">
+            <div class="section-header infos-section__header">
+              <h2>Infos</h2>
+              <p>
+                Still life photographer based in Edinburgh with a personal
+                approach to objects, light and material.
+              </p>
+            </div>
+          </div>
+          <div class="infos-section__contact">
+            <div>
+              <h3>Contact</h3>
+              <address>
+                123 Royal Mile
+                <br />
+                EH1 2QR Edinburgh
+                <br />
+                Scotland
+              </address>
+            </div>
+            <div>
+              <h3>Represented by</h3>
+              <address>
+                <p>Spectral</p>
+                <a
+                  href="tel:+441315556789"
+                  aria-label="Call us at +44 131 555 6789"
+                >
+                  <span className="sr-only">Call us at </span>+44 131 555 6789
+                </a>
+                <br />
+                <a href="mailto:hello@Spectraldiscovery.co.uk">
+                  hello@spectraldiscovery.co.uk
+                </a>
+              </address>
+            </div>
+          </div>
+        </section>
+        <section class="site-menu__section"></section>
+        <section class="site-menu__section"></section>
       </div>
       <main></main>
+      <footer class="footer">
+        <div class="footer__container">
+          <p><small>spectral gallery</small></p>
+          <p>
+            <small
+              >designed & developed by
+              <a
+                href="https://portfolio-qdch.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my Portfolio"
+                >quentin dch</a
+              ></small
+            >
+          </p>
+          <p>
+            <small>en</small><small>&copy; <span id="year"></span></small>
+          </p>
+        </div>
+      </footer>
     </div>
     <script type="module" src="/src/js/main.js" defer></script>
   </body>

@@ -120,7 +120,7 @@
           </div>
           <div class="infos-section__contact">
             <div>
-              <h3>Contact</h3>
+              <h3>Address</h3>
               <address>
                 123 Royal Mile
                 <br />
@@ -148,7 +148,36 @@
           </div>
         </section>
         <section class="site-menu__section"></section>
-        <section class="site-menu__section"></section>
+        <section class="site-menu__section">
+          <div class="faq-section">
+            <div class="section-header faq-section__header">
+              <h2>FAQ</h2>
+              <p>Curious to know more ?</p>
+            </div>
+            <ul
+              class="faq-section__list"
+              aria-label="Accordion Buttons"
+              role="tablist"
+            ></ul>
+            <template id="accordion-template">
+              <li class="faq-section__item" role="tab">
+                <button
+                  class="accordion__button"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <h4 class="accordion__title"></h4>
+                  <div class="accordion__icon">↓</div>
+                </button>
+                <div class="accordion__content">
+                  <div class="accordion__inner">
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </template>
+          </div>
+        </section>
       </div>
       <main></main>
       <footer class="footer">

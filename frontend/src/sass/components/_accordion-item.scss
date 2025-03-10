@@ -1,0 +1,32 @@
+// accordion-item.scss
+@use "@mixins" as *;
+
+.faq-section__item {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--black);
+}
+
+.accordion__button {
+  width: 100%;
+  padding-block: 7.5rem;
+
+  @include flex-between;
+}
+
+.accordion__button:hover {
+  cursor: pointer;
+}
+
+.accordion__icon {
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion__content {
+  height: 0px;
+  overflow: hidden;
+  transition-property: height;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,88 @@
+// accordion-item.scss
+@use "@mixins" as *;
+
+.faq-section__item {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--black);
+}
+
+.accordion__button {
+  width: 100%;
+  padding-block: 7.5rem;
+
+  @include flex-between;
+  position: relative;
+}
+
+@media (hover: hover) {
+  .accordion__button:hover {
+    cursor: pointer;
+  }
+}
+
+.accordion__icon {
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion__icon.rotated {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  height: 0px;
+  overflow: hidden;
+  transition-property: height;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion__info {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+
+  width: 50rem;
+  @include flex-center;
+  border-width: 0.1rem;
+  border-color: transparent;
+
+  opacity: 0;
+  overflow: hidden;
+  height: 75%;
+
+  transition: clip-path 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  will-change: transform;
+}
+
+.accordion__info--open {
+  background-color: var(--black);
+  color: var(--white);
+
+  clip-path: inset(0% 0% -10% 0%);
+}
+.accordion__info--close {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--black);
+
+  clip-path: inset(110% 0% 0% 0%);
+}
+
+.accordion__info-label {
+  text-transform: uppercase;
+  font-size: 10rem;
+}
+
+@media (hover: hover) {
+  .faq-section__item:hover .accordion__info {
+    opacity: 1;
+  }
+}
+.faq-section__item:focus .accordion__info {
+  opacity: 1;
+}

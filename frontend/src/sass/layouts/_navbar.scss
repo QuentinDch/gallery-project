@@ -60,4 +60,8 @@
   transform: translate(-50%, -50%);
   padding: 4.68rem;
   text-transform: uppercase;
+
+  @media (max-width: 767px) {
+    left: 90%;
+  }
 }

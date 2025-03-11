@@ -13,6 +13,10 @@
     color: var(--gray);
     margin-bottom: 5rem;
   }
+
+  @media (max-width: 1024px) {
+    padding: 5em 3em;
+  }
 }
 
 .section-header {

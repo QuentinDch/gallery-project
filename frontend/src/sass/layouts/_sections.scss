@@ -1,6 +1,8 @@
 // sections.scss
 
 .site-menu__section {
+  position: relative;
+  top: 0;
   display: flex;
   flex-direction: column;
   gap: 10rem;
@@ -24,6 +26,8 @@
 
 .section-header {
   margin-bottom: 20rem;
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
   & h2 {
     font-size: 15rem;

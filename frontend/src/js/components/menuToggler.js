@@ -19,6 +19,8 @@ export function initMenuToggler() {
   let isOpen = false;
   const defaultEase = "power4.inOut";
 
+  gsap.set(".section-header h2", { y: 50 });
+  gsap.set(".section-header p", { y: 20 });
   gsap.set(menuLabelOpen, { transform: "translate3d(0%, 0%, 0px)" });
 
   function handleKeydown(e) {
@@ -55,6 +57,20 @@ export function initMenuToggler() {
       duration: 1.25,
       ease: defaultEase,
     });
+
+    gsap.to(".section-header h2", {
+      y: 0,
+      duration: 1,
+      delay: 0.75,
+      ease: "power3.out",
+    });
+
+    gsap.to(".section-header p", {
+      y: 0,
+      duration: 1,
+      delay: 1,
+      ease: "power3.out",
+    });
   }
 
   function closeMenu() {
@@ -83,6 +99,18 @@ export function initMenuToggler() {
       clipPath: "inset(0% 0% 100% 0%)",
       duration: 1.25,
       ease: defaultEase,
+    });
+
+    gsap.to(menu, {
+      top: "-300px",
+      opacity: 0,
+      duration: 1.25,
+      ease: defaultEase,
+      onComplete: () => {
+        gsap.set(".section-header h2", { y: 50 });
+        gsap.set(".section-header p", { y: 20 });
+        gsap.set(menu, { opacity: 1, top: "0px" });
+      },
     });
   }
 

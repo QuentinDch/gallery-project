@@ -10,12 +10,13 @@ export async function setAuthButtonState() {
   const btnLabelLogin = btnTogglerLogin.querySelector(".navbar__login-label");
   const btnLabelLogout = btnTogglerLogout.querySelector(".navbar__login-label");
 
-  let isLogin = await checkAuthStatus();
-
-  if (isLogin) {
-    return showLogoutButton();
-  }
   showLoginButton();
+
+  checkAuthStatus().then((isLogin) => {
+    if (isLogin) {
+      showLogoutButton();
+    }
+  });
 
   function showLogoutButton() {
     gsap.set(btnTogglerLogin, { pointerEvents: "none" });

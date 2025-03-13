@@ -8,6 +8,7 @@ function resetHeaderPosition() {
   gsap.set(".faq-section__list li", { y: 165 });
   gsap.set(".infos-section__contact div", { y: 75 });
   gsap.set([".auth-form div", ".auth-form button"], { y: 180 });
+  gsap.set(".image-section__wrapper img", { clipPath: "inset(100% 0% 0% 0%)" });
 }
 
 export function animateMenuIn(menu, menuLabelOpen, menuLabelClose) {
@@ -70,10 +71,18 @@ export function animateMenuIn(menu, menuLabelOpen, menuLabelClose) {
     stagger: 0.1,
     ease: "power3.out",
   });
+
   gsap.to(".auth-form button", {
     y: 0,
     duration: 1,
     delay: 1.25,
+    ease: "power3.out",
+  });
+
+  gsap.to(".image-section__wrapper img", {
+    clipPath: "inset(0% 0% 0% 0%)",
+    duration: 1,
+    delay: 1.5,
     ease: "power3.out",
   });
 }

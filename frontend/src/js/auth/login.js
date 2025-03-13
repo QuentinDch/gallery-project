@@ -1,6 +1,7 @@
 // loginUser.js
 
 import { setAuthButtonState } from "./setAuthButtonState";
+import { closeMenu } from "../features/menuToggler";
 
 export function loginUser() {
   const loginForm = document.getElementById("login-form");
@@ -52,9 +53,10 @@ export function loginUser() {
 
       if (response.ok) {
         setAuthButtonState();
+        closeMenu();
       }
     } catch (error) {
-      console.error("Erreur:", error);
+      console.error(error);
     }
   });
 }

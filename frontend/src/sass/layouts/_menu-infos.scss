@@ -27,3 +27,27 @@
 .infos-section__contact a:focus {
   opacity: 0.5;
 }
+
+.image-section__wrapper {
+  position: relative;
+
+  height: 100%;
+  display: block;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding-block: 25rem;
+}
+
+.image-section__wrapper img {
+  grid-column: 8 /13;
+  display: block;
+  height: 10.125vw;
+  width: 16.125vw;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: brightness(0.8);
+
+  clip-path: inset(0% 0% 100% 0%);
+}

@@ -4,12 +4,12 @@
 import "../sass/main.scss";
 
 // Import components
-import { initMenuToggler } from "./components/menuToggler";
+import { initMenuToggler } from "./features/menuToggler";
 import { initAccordion } from "./components/accordion";
-import { loginUser } from "./components/login";
-import { logoutUser } from "./components/logout";
-import { setAuthButtonState } from "./components/setAuthButtonState";
-import { initializeFooterDate } from "./components/dateUtils";
+import { loginUser } from "./auth/login";
+import { logoutUser } from "./auth/logout";
+import { setAuthButtonState } from "./auth/setAuthButtonState";
+import { initializeFooterDate } from "./features/dateUtils";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Project loaded successfully!");

@@ -58,65 +58,61 @@
         aria-hidden="true"
       >
         <section class="site-menu__section site-menu__content">
-          <div class="auth-section">
-            <div class="section-header auth-section__header">
-              <h2>Login</h2>
-              <p>Welcome back! Please login to your account.</p>
-            </div>
-            <form action="#" method="post" class="auth-form" id="login-form">
-              <div class="auth-form__field">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="User name*"
-                />
-              </div>
-              <div class="auth-form__field">
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password*"
-                />
-              </div>
-              <div class="auth-form__remember">
-                <label class="auth-form__remember-label" for="remember-me">
-                  <input type="checkbox" id="remember-me" />
-                  <i>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="10"
-                      height="8"
-                      fill="none"
-                      viewBox="0 0 10 8"
-                    >
-                      <path stroke="currentColor" d="m1 4 3 3 5-6"></path>
-                    </svg>
-                  </i>
-                  <span>Remember me</span>
-                </label>
-              </div>
-              <button
-                id="submit"
-                class="auth-form__submit"
-                type="submit"
-                aria-label="Submit"
-              >
-                <span>Submit</span>
-              </button>
-            </form>
+          <div class="section-header auth-section__header">
+            <h2>Log In</h2>
+            <p>Welcome back! Please login to your account.</p>
           </div>
+          <form action="#" method="post" class="auth-form" id="login-form">
+            <div class="auth-form__field">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email or Username*"
+              />
+            </div>
+            <div class="auth-form__field">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password*"
+              />
+            </div>
+            <div class="auth-form__remember">
+              <label class="auth-form__remember-label" for="remember-me">
+                <input type="checkbox" id="remember-me" />
+                <i>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="8"
+                    fill="none"
+                    viewBox="0 0 10 8"
+                  >
+                    <path stroke="currentColor" d="m1 4 3 3 5-6"></path>
+                  </svg>
+                </i>
+                <span>Keep me logged in</span>
+              </label>
+            </div>
+            <button
+              id="submit"
+              class="auth-form__submit"
+              type="submit"
+              aria-label="Submit"
+            >
+              <span>Submit</span>
+            </button>
+          </form>
         </section>
         <section class="site-menu__section site-menu__infos">
-          <div class="infos-section">
-            <div class="section-header infos-section__header">
-              <h2>Infos</h2>
-              <p>
-                Still life photographer based in Edinburgh with a personal
-                approach to objects, light and material.
-              </p>
-            </div>
+          <div class="section-header infos-section__header">
+            <h2>Infos</h2>
+            <p>
+              Still life photographer based in Edinburgh with a personal
+              approach to objects, light and material.
+            </p>
           </div>
           <div class="infos-section__contact">
             <div>
@@ -147,42 +143,47 @@
             </div>
           </div>
         </section>
-        <section class="site-menu__section"></section>
-        <section class="site-menu__section">
-          <div class="faq-section">
-            <div class="section-header faq-section__header">
-              <h2>FAQ</h2>
-              <p>Curious to know more ?</p>
-            </div>
-            <ul
-              class="faq-section__list"
-              aria-label="Accordion Buttons"
-              role="tablist"
-            ></ul>
-            <template id="accordion-template">
-              <li class="faq-section__item" role="tab">
-                <button
-                  class="accordion__button"
-                  type="button"
-                  aria-expanded="false"
-                >
-                  <h4 class="accordion__title"></h4>
-                  <div class="accordion__icon">↓</div>
-                  <span class="accordion__info accordion__info--open">
-                    <span class="accordion__info-label">more</span>
-                  </span>
-                  <span class="accordion__info accordion__info--close">
-                    <span class="accordion__info-label">less</span>
-                  </span>
-                </button>
-                <div class="accordion__content">
-                  <div class="accordion__inner">
-                    <p></p>
-                  </div>
-                </div>
-              </li>
-            </template>
+        <section class="site-menu__section site-menu__image">
+          <div class="image-section__wrapper">
+            <img
+              src="./src/assets/images/photographer.avif"
+              alt="Front view of photographer developing photos in darkroom"
+            />
           </div>
+        </section>
+        <section class="site-menu__section">
+          <div class="section-header faq-section__header">
+            <h2>FAQ</h2>
+            <p>Curious to know more ?</p>
+          </div>
+          <ul
+            class="faq-section__list"
+            aria-label="Accordion Buttons"
+            role="tablist"
+          ></ul>
+          <template id="accordion-template">
+            <li class="faq-section__item" role="tab">
+              <button
+                class="accordion__button"
+                type="button"
+                aria-expanded="false"
+              >
+                <h4 class="accordion__title"></h4>
+                <div class="accordion__icon">↓</div>
+                <span class="accordion__info accordion__info--open">
+                  <span class="accordion__info-label">more</span>
+                </span>
+                <span class="accordion__info accordion__info--close">
+                  <span class="accordion__info-label">less</span>
+                </span>
+              </button>
+              <div class="accordion__content">
+                <div class="accordion__inner">
+                  <p></p>
+                </div>
+              </div>
+            </li>
+          </template>
         </section>
       </div>
       <main></main>

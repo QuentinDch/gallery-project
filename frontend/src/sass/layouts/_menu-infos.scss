@@ -1,6 +1,9 @@
 // menu-infos.scss
 
 .infos-section__contact {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
   display: flex;
   gap: 75rem;
   line-height: 16rem;
@@ -9,6 +12,8 @@
 .infos-section__contact a {
   opacity: 1;
   text-decoration: underline;
+  text-underline-offset: initial;
+
   transition-property: opacity;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.26, 1.04, 0.54, 1);
@@ -21,4 +26,34 @@
 }
 .infos-section__contact a:focus {
   opacity: 0.5;
+}
+
+.image-section__wrapper {
+  position: relative;
+
+  height: 100%;
+  display: block;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding-block: 25rem;
+}
+
+.image-section__wrapper img {
+  grid-column: 8 /13;
+  display: block;
+  height: 10.125vw;
+  width: 16.125vw;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: brightness(0.8);
+
+  clip-path: inset(0% 0% 100% 0%);
+
+  @media (max-width: 1024px) {
+    grid-column: 5 / 13;
+    height: 16.125vw;
+    width: 26.125vw;
+  }
 }

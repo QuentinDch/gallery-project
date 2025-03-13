@@ -1,9 +1,16 @@
 // accordion-item.scss
 @use "@mixins" as *;
 
+.faq-section__list {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
 .faq-section__item {
   border-bottom-width: 1px;
   border-bottom-color: var(--black);
+
+  margin-bottom: 5rem;
 }
 
 .accordion__button {
@@ -36,6 +43,10 @@
   transition-property: height;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion__inner {
+  padding-block: 0.8em;
 }
 
 .accordion__info {

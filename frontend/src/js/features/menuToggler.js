@@ -1,7 +1,7 @@
 // menuToggler.js
 import gsap from "gsap";
 
-import { animateMenuIn, animateMenuOut } from "../animations/menuAnimations";
+import { animateMenuIn, animateMenuOut } from "./menuAnimations";
 
 export function initMenuToggler() {
   const login = document.querySelector(".navbar__login");

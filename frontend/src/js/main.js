@@ -9,7 +9,7 @@ import { initAccordion } from "./components/accordion";
 import { loginUser } from "./auth/login";
 import { logoutUser } from "./auth/logout";
 import { setAuthButtonState } from "./auth/setAuthButtonState";
-import { initializeFooterDate } from "./features/dateUtils";
+import { initializeFooterDate } from "./utils/dateUtils";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Project loaded successfully!");

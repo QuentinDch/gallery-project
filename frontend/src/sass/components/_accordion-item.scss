@@ -1,6 +1,11 @@
 // accordion-item.scss
 @use "@mixins" as *;
 
+.faq-section__list {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
 .faq-section__item {
   border-bottom-width: 1px;
   border-bottom-color: var(--black);

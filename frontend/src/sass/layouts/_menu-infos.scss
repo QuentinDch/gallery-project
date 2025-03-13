@@ -1,6 +1,9 @@
 // menu-infos.scss
 
 .infos-section__contact {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
   display: flex;
   gap: 75rem;
   line-height: 16rem;
@@ -9,6 +12,8 @@
 .infos-section__contact a {
   opacity: 1;
   text-decoration: underline;
+  text-underline-offset: initial;
+
   transition-property: opacity;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.26, 1.04, 0.54, 1);

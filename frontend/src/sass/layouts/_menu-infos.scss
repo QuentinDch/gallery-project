@@ -50,4 +50,10 @@
   filter: brightness(0.8);
 
   clip-path: inset(0% 0% 100% 0%);
+
+  @media (max-width: 1024px) {
+    grid-column: 5 / 13;
+    height: 16.125vw;
+    width: 26.125vw;
+  }
 }

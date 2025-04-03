@@ -1,6 +1,7 @@
 // logoutUser.js
 
 import { setAuthButtonState } from "./setAuthButtonState";
+import { hideEditionBanner } from "../features/editionBanner";
 
 export function logoutUser() {
   document
@@ -25,6 +26,7 @@ export function logoutUser() {
           });
 
           setAuthButtonState();
+          hideEditionBanner();
         }
       } catch (error) {
         console.error("Error:", error);

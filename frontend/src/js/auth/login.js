@@ -2,6 +2,7 @@
 
 import { setAuthButtonState } from "./setAuthButtonState";
 import { closeMenu } from "../features/menuToggler";
+import { displayEditionBanner } from "../features/editionBanner";
 
 export function loginUser() {
   const loginForm = document.getElementById("login-form");
@@ -54,6 +55,7 @@ export function loginUser() {
       if (response.ok) {
         setAuthButtonState();
         closeMenu();
+        displayEditionBanner();
       }
     } catch (error) {
       console.error(error);

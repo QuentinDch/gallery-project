@@ -1,0 +1,17 @@
+// intro.scss
+
+.intro {
+  @media (max-width: 767px) {
+    padding-top: 184.615rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+.intro-content {
+  user-select: none;
+
+  grid-column: 8/13;
+  @media (max-width: 1024px) {
+    grid-column: 6/13;
+  }
+}

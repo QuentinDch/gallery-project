@@ -14,10 +14,23 @@
   line-height: 120%;
 }
 
-.filter-options button {
-  width: max-content;
+.filter-options-btn {
+  opacity: 0.5;
+
+  transition-property: opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.26, 1.04, 0.54, 1);
 }
 
-.filter-options span {
-  color: var(--gray);
+.filter-options-btn.active {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .filter-options-btn:hover {
+    opacity: 1;
+  }
+}
+.filter-options-btn:focus {
+  opacity: 1;
 }

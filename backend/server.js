@@ -30,6 +30,9 @@ app.use("/api/auth", authRoutes);
 const projectRoutes = require("./server/routes/projectRoutes");
 app.use("/api/projects", projectRoutes);
 
+const categoryRoutes = require("./server/routes/categoriesRoutes");
+app.use("/api/categories", categoryRoutes);
+
 // Lancer le serveur
 app.listen(port, () => {
   console.log("Server running on port " + port);

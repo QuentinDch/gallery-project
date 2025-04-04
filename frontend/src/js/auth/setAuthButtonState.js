@@ -2,6 +2,7 @@
 
 import gsap from "gsap";
 import { checkAuthStatus } from "./authStatus";
+import { displayEditionBanner } from "../features/editionBanner";
 
 export async function setAuthButtonState() {
   const btnTogglerLogin = document.querySelector(".btn-toggler-login");
@@ -15,6 +16,7 @@ export async function setAuthButtonState() {
   checkAuthStatus().then((isLogin) => {
     if (isLogin) {
       showLogoutButton();
+      displayEditionBanner();
     }
   });
 

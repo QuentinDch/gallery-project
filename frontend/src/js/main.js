@@ -10,6 +10,7 @@ import { loginUser } from "./auth/login";
 import { logoutUser } from "./auth/logout";
 import { setAuthButtonState } from "./auth/setAuthButtonState";
 import { initializeFooterDate } from "./utils/dateUtils";
+import { fetchCategories } from "./components/categoryButtons";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Project loaded successfully!");
@@ -20,4 +21,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setAuthButtonState();
   loginUser();
   logoutUser();
+  fetchCategories();
 });

@@ -25,3 +25,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin flex-start-column {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}

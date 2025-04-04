@@ -7,7 +7,7 @@ function resetHeaderPosition() {
   gsap.set(".section-header p", { y: 20 });
   gsap.set(".faq-section__list li", { y: 165 });
   gsap.set(".infos-section__contact div", { y: 75 });
-  gsap.set([".auth-form div", ".auth-form button"], { y: 180 });
+  gsap.set([".auth-form div", ".auth-form button"], { y: 195 });
   gsap.set(".image-section__wrapper img", { clipPath: "inset(100% 0% 0% 0%)" });
 }
 
@@ -85,6 +85,16 @@ export function animateMenuIn(menu, menuLabelOpen, menuLabelClose) {
     delay: 1.5,
     ease: "power3.out",
   });
+
+  gsap.to(".main", {
+    top: "-50%",
+    opacity: 0,
+    duration: 1.25,
+    ease: defaultEase,
+    onComplete: () => {
+      gsap.set(".main", { top: "50%" });
+    },
+  });
 }
 
 export function animateMenuOut(menu, menuLabelOpen, menuLabelClose) {
@@ -104,6 +114,13 @@ export function animateMenuOut(menu, menuLabelOpen, menuLabelClose) {
 
   gsap.to(menu, {
     clipPath: "inset(0% 0% 100% 0%)",
+    duration: 1.25,
+    ease: defaultEase,
+  });
+
+  gsap.to(".main", {
+    top: "0%",
+    opacity: 1,
     duration: 1.25,
     ease: defaultEase,
   });

@@ -1,7 +1,6 @@
-// loginUser.js
-
 import { setAuthButtonState } from "./setAuthButtonState";
 import { closeMenu } from "../features/menuToggler";
+import { displayEditionBanner } from "../features/editionBanner";
 
 export function loginUser() {
   const loginForm = document.getElementById("login-form");
@@ -16,23 +15,16 @@ export function loginUser() {
     const rememberMe = document.getElementById("remember-me").checked;
 
     let hasError = false;
-    Object.values(inputs).forEach((input) => {
-      removeRequiredFieldMessage(input);
 
+    // Validation des champs obligatoires
+    Object.values(inputs).forEach((input) => {
+      removeFieldMessage(input);
       if (!input.value.trim()) {
-        showRequiredFieldMessage(input);
+        showFieldMessage(input, "This field is required");
         hasError = true;
       }
     });
 
-    if (!email) {
-      showRequiredFieldMessage(inputs.email);
-      hasError = true;
-    }
-    if (!password) {
-      showRequiredFieldMessage(inputs.password);
-      hasError = true;
-    }
     if (hasError) return;
 
     try {
@@ -51,17 +43,23 @@ export function loginUser() {
 
       const data = await response.json();
 
-      if (response.ok) {
-        setAuthButtonState();
-        closeMenu();
+      if (!response.ok) {
+        Object.values(inputs).forEach((input) => {
+          showFieldMessage(input, "Invalid field(s)");
+        });
+        return;
       }
+
+      setAuthButtonState();
+      closeMenu();
+      displayEditionBanner();
     } catch (error) {
-      console.error(error);
+      console.error("Erreur lors de la requête :", error);
     }
   });
 }
 
-function showRequiredFieldMessage(input) {
+function showFieldMessage(input, messageText) {
   const fieldContainer = input.closest(".auth-form__field");
 
   if (fieldContainer.querySelector(".auth-form__field--required")) return;
@@ -70,13 +68,13 @@ function showRequiredFieldMessage(input) {
   errorDiv.classList.add("auth-form__field--required");
 
   const message = document.createElement("span");
-  message.textContent = "This field is required";
+  message.textContent = messageText;
 
   errorDiv.appendChild(message);
   fieldContainer.appendChild(errorDiv);
 }
 
-function removeRequiredFieldMessage(input) {
+function removeFieldMessage(input) {
   const fieldContainer = input.closest(".auth-form__field");
   const errorDiv = fieldContainer?.querySelector(".auth-form__field--required");
 

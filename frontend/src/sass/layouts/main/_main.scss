@@ -1,0 +1,37 @@
+// main.scss
+
+.main {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.main h2 {
+  font-size: 15rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 5.625rem;
+}
+
+.main p {
+  text-wrap: balance;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  padding-top: 140.625rem;
+  padding-inline: 15rem;
+  margin-bottom: 12.1875rem;
+
+  font-size: 13.125rem;
+  letter-spacing: -0.05em;
+  line-height: normal;
+}
+
+.content {
+  user-select: none;
+}

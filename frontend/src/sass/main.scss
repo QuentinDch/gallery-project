@@ -12,10 +12,15 @@
 @use "./components/animated-bracket";
 @use "./components/form";
 @use "./components/accordion-item";
+@use "./components/edit-bar";
+@use "./components/banner-github";
 
 @use "./layouts/header";
 @use "./layouts/navbar";
 @use "./layouts/menu";
+@use "./layouts/main/main";
+@use "./layouts/main/intro";
+@use "./layouts/main/filter";
 @use "./layouts/sections";
 @use "./layouts/menu-infos";
 @use "./layouts/footer";

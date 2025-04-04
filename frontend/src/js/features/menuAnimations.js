@@ -7,7 +7,7 @@ function resetHeaderPosition() {
   gsap.set(".section-header p", { y: 20 });
   gsap.set(".faq-section__list li", { y: 165 });
   gsap.set(".infos-section__contact div", { y: 75 });
-  gsap.set([".auth-form div", ".auth-form button"], { y: 190 });
+  gsap.set([".auth-form div", ".auth-form button"], { y: 195 });
   gsap.set(".image-section__wrapper img", { clipPath: "inset(100% 0% 0% 0%)" });
 }
 

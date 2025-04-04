@@ -17,23 +17,16 @@ export function loginUser() {
     const rememberMe = document.getElementById("remember-me").checked;
 
     let hasError = false;
+
+    // Validation des champs obligatoires
     Object.values(inputs).forEach((input) => {
       removeRequiredFieldMessage(input);
-
       if (!input.value.trim()) {
         showRequiredFieldMessage(input);
         hasError = true;
       }
     });
 
-    if (!email) {
-      showRequiredFieldMessage(inputs.email);
-      hasError = true;
-    }
-    if (!password) {
-      showRequiredFieldMessage(inputs.password);
-      hasError = true;
-    }
     if (hasError) return;
 
     try {

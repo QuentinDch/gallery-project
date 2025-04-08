@@ -1,0 +1,14 @@
+// project.scss
+
+.project {
+  position: relative;
+  display: grid;
+  height: fit-content;
+  row-gap: 10rem;
+}
+
+@media (hover: hover) {
+  .project:hover {
+    cursor: pointer;
+  }
+}

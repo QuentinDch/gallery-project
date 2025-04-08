@@ -1,0 +1,15 @@
+// archives.scss
+
+.archives {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: span 12;
+  grid-gap: 5rem;
+
+  padding-inline: 15rem;
+  padding-top: 70.3125rem;
+
+  font-size: 13.125rem;
+  letter-spacing: -0.05em;
+  line-height: normal;
+}

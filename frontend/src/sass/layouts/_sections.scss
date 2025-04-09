@@ -26,6 +26,7 @@
 
 .section-header {
   margin-bottom: 20rem;
+  user-select: none;
 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 

@@ -6,7 +6,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 // Récupérer tous les projets (public)
 router.get("/", async (req, res) => {
   try {
-    const projects = await Project.find();
+    const projects = await Project.find().populate("category");
     return res.json(projects);
   } catch (err) {
     console.error(err);
@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 // Récupérer un projet spécifique par ID (public)
 router.get("/:id", async (req, res) => {
   try {
-    const project = await Project.findById(req.params.id);
+    const project = await Project.findById(req.params.id).populate("category");
     if (!project) {
       return res.status(404).json({ message: "Projet non trouvé" });
     }
@@ -34,13 +34,18 @@ router.get("/:id", async (req, res) => {
 
 // Ajouter un projet (admin uniquement)
 router.post("/", authMiddleware, async (req, res) => {
-  const { title, description, image, link } = req.body;
-  if (!title || !description || !image || !link) {
+  const { title, image, category, year } = req.body;
+  if (!title || !image || !category || !year) {
     return res.status(400).json({ message: "Tous les champs sont requis" });
   }
 
   try {
-    const newProject = new Project({ title, description, image, link });
+    const categoryExists = await mongoose.model("Category").findById(category);
+    if (!categoryExists) {
+      return res.status(400).json({ message: "Catégorie non trouvée" });
+    }
+
+    const newProject = new Project({ title, image, category, year });
     await newProject.save();
     return res.status(201).json(newProject);
   } catch (err) {
@@ -53,9 +58,9 @@ router.post("/", authMiddleware, async (req, res) => {
 
 // Modifier un projet (admin uniquement)
 router.put("/:id", authMiddleware, async (req, res) => {
-  const { title, description, image, link } = req.body;
+  const { title, image, category, year } = req.body;
   if (Object.keys(req.body).length > 0) {
-    if (title === "" || description === "" || image === "" || link === "") {
+    if (title === "" || image === "" || category === "" || year === "") {
       return res
         .status(400)
         .json({ message: "Les champs ne peuvent pas être vides" });

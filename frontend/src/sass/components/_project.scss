@@ -1,0 +1,25 @@
+// project.scss
+
+.project {
+  position: relative;
+  display: grid;
+  height: fit-content;
+  row-gap: 10rem;
+}
+
+.project img {
+  filter: grayscale(0.9);
+  transition: filter 0.6s;
+}
+
+@media (hover: hover) {
+  .project:hover img {
+    filter: grayscale(0);
+  }
+}
+
+.info-project {
+  font-size: 13.125rem;
+  letter-spacing: -0.05em;
+  line-height: 13.125rem;
+}

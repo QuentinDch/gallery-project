@@ -1,0 +1,19 @@
+// archives.scss
+
+.archives {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: span 12;
+  grid-gap: 9.375rem;
+
+  padding-inline: 15rem;
+  padding-top: 70.3125rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

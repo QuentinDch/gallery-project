@@ -3,7 +3,6 @@ export async function fetchCategories() {
   try {
     const response = await fetch("http://localhost:5000/api/categories");
     const categories = await response.json();
-
     // Une fois les catégories récupérées, générer les boutons
     renderCategoryButtons(categories);
   } catch (error) {
@@ -14,7 +13,6 @@ export async function fetchCategories() {
 // Fonction pour générer les boutons de filtre
 function renderCategoryButtons(categories) {
   const filterContainer = document.querySelector(".filter-options");
-
   // Parcourir toutes les catégories et créer un bouton pour chacune
   categories.forEach((category, index) => {
     const button = document.createElement("button");
@@ -25,12 +23,10 @@ function renderCategoryButtons(categories) {
     button.setAttribute("aria-label", `Show ${category.title} items`);
     button.setAttribute(
       "data-filter",
-      category.slug || category.title.toLowerCase()
+      category._id // Utilisation de l'ID MongoDB comme identifiant pour le filtrage
     );
-
     const span = document.createElement("span");
     span.textContent = category.title;
-
     button.appendChild(span);
     filterContainer.appendChild(button); // Ajoute directement à la suite des éléments existants
   });
@@ -43,7 +39,6 @@ function renderCategoryButtons(categories) {
 // Configuration du système de filtrage
 function setupFilterButtons() {
   const allButtons = document.querySelectorAll(".filter-options-btn");
-
   allButtons.forEach((button) => {
     button.addEventListener("click", function () {
       // Désactiver tous les boutons
@@ -51,11 +46,9 @@ function setupFilterButtons() {
         btn.classList.remove("active");
         btn.setAttribute("aria-pressed", "false");
       });
-
       // Activer le bouton cliqué
       this.classList.add("active");
       this.setAttribute("aria-pressed", "true");
-
       // Filtrer les projets selon la catégorie
       const filter = this.getAttribute("data-filter");
       filterProjects(filter);
@@ -72,17 +65,17 @@ function activateAllButton() {
   }
 }
 
-// Filtrer les projets selon la catégorie
-// function filterProjects(category) {
-//   const projects = document.querySelectorAll(".project-item"); // Ajustez selon votre classe
+// // Filtrer les projets selon la catégorie
+// function filterProjects(categoryId) {
+//   const projects = document.querySelectorAll(".project-item");
 
 //   projects.forEach((project) => {
-//     if (category === "all") {
+//     if (categoryId === "all") {
 //       project.style.display = "block"; // Ou flex/grid selon votre layout
 //     } else {
-//       const projectCategories =
-//         project.getAttribute("data-categories")?.split(",") || [];
-//       if (projectCategories.includes(category)) {
+//       const projectCategory = project.getAttribute("data-category");
+
+//       if (projectCategory === categoryId) {
 //         project.style.display = "block";
 //       } else {
 //         project.style.display = "none";

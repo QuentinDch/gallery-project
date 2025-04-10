@@ -18,9 +18,11 @@
 }
 
 .filter-options {
-  grid-column: 2/3;
+  grid-column: 2/4;
   margin-left: 30rem;
   line-height: 120%;
+
+  @include flex-start-column;
 
   @media (max-width: 1024px) {
     grid-column: 3/13;
@@ -34,6 +36,8 @@
 }
 
 .filter-options-btn {
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
   opacity: 0.5;
 
   transition-property: opacity;

@@ -11,6 +11,7 @@ import { logoutUser } from "./auth/logout";
 import { setAuthButtonState } from "./auth/setAuthButtonState";
 import { initializeFooterDate } from "./utils/dateUtils";
 import { fetchCategories } from "./components/categoryButtons";
+import { fetchProjects } from "./features/galleryProject";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Project loaded successfully!");
@@ -22,4 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
   loginUser();
   logoutUser();
   fetchCategories();
+  fetchProjects();
 });

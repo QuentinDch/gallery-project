@@ -65,21 +65,21 @@ function activateAllButton() {
   }
 }
 
-// // Filtrer les projets selon la catégorie
-// function filterProjects(categoryId) {
-//   const projects = document.querySelectorAll(".project-item");
+// Filtrer les projets selon la catégorie
+function filterProjects(categoryId) {
+  const projects = document.querySelectorAll(".project");
 
-//   projects.forEach((project) => {
-//     if (categoryId === "all") {
-//       project.style.display = "block"; // Ou flex/grid selon votre layout
-//     } else {
-//       const projectCategory = project.getAttribute("data-category");
+  projects.forEach((project) => {
+    if (categoryId === "all") {
+      project.style.display = "grid";
+    } else {
+      const projectCategory = project.getAttribute("data-category");
 
-//       if (projectCategory === categoryId) {
-//         project.style.display = "block";
-//       } else {
-//         project.style.display = "none";
-//       }
-//     }
-//   });
-// }
+      if (projectCategory === categoryId) {
+        project.style.display = "grid";
+      } else {
+        project.style.display = "none";
+      }
+    }
+  });
+}
